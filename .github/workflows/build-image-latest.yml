@@ -19,9 +19,6 @@ jobs:
           fetch-depth: 0
           repository: slopus/happy-server
 
-      - name: allow CORS
-        run: sed -i "s@new Error(\"Not allowed by CORS\"), false@null, true@g" server/src/index.ts
-
       - name: Get current date and time
         id: datetime
         run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
